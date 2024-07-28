@@ -1,0 +1,95 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Review Forum</title>
+    <link rel="stylesheet" href="/css/baseStyles.css">
+    <link rel="stylesheet" href="/css/userProfileStyles.css">
+</head>
+
+<body>
+   <div class="main centered-flex">
+    <div class="top-panel centered-flex">
+        <div class="profile-pic-container">
+            <img src="{{profilePicURL}}" alt="profile pic" id="profile-pic">
+        </div>
+        <div class="name-and-status centered-flex">
+            <h2>{{username}}</h2>
+        </div>
+        <div class="toolbar-panel">
+            <form action="/sign-out" method="POST">
+                <button type="submit" id="sign-out-btn" class="toobar-btn">Sign Out</button>
+            </form>
+            
+           <form id="profilePicForm" enctype="multipart/form-data" action="/upload-profile-pic" method="POST" class="toobar-btn">
+                <input type="file" name="profilePic" accept="image/*" id="profile-pic-input" style="display: none;" class="toobar-btn">
+                <button type="button" id="change-profile-pic" class="toobar-btn">Change Profile Picture</button>
+                <button type="submit" id="upload-btn" style="display: none;" class="toobar-btn">Upload</button>
+            </form>
+                    
+        </div>
+    </div>
+
+    <div class="bottom-panel centered-flex">
+        <div class="right-summary-panel centered-flex">
+            <div id="tabs-list">
+                <button data-tab-target="reviews-published" class="tab active">Reviews Published</button>
+                <button data-tab-target="favourite-books" class="tab">Favourite Books</button>
+            </div>
+
+            <div class="tab-content active" id="reviews-published">
+                {{#each userReviews}}
+                
+                    <div class="review-container">
+                        <div class="review-header">
+                            
+                            {{this.bookId.bookName}} - 
+                            {{#each this.bookId.authors}}
+                                {{this}}
+                                {{#unless @last}}, {{/unless}}
+                            {{/each}}
+                            <button class="delete-review-btn" data-review-id="{{this._id}}">Delete Review</button>
+                        
+                            
+                        </div>
+                        
+                        <div class="review-content-container">
+                            <div class="review-text">{{this.reviewText}}</div>
+                        </div>
+                    </div>
+
+                {{/each}}
+            </div>
+
+            <div class="tab-content" id="favourite-books">
+                <div class="cards-container">
+                    {{#each likedBooks}}
+                    
+                        <a class="book-container" href="../reviews/{{this._id}}">
+                            <div class="book-cover-container">
+                                <img src="{{this.bookCoverPath}}" alt="Book Cover" class="book-cover">
+                            </div>
+                            <div class="book-details">
+                                <div class="book-title">{{this.bookName}}</div>
+                                
+                                <div class="book-author">
+                                    {{#each this.authors}}
+                                        {{this}}
+                                        {{#unless @last}}, {{/unless}}
+                                    {{/each}}
+                                </div>
+                                <div class="book-year">{{this.publishedYear}}</div>
+                                <button class="removeFromFavourites" data-book-id="{{this._id}}">Remove from Favourites</button>
+                            </div>
+                        </a>
+
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="/scripts/userProfile_Script.js" type="text/javascript"></script>
+</body>

@@ -1,0 +1,38 @@
+
+<link rel="stylesheet" href="/css/baseStyles.css">
+<link rel="stylesheet" href="/css/homeStyles.css">
+
+<body>
+
+    <div class="title-bar">
+        <div class="page-title">
+            <h1>Library Shelves</h1>
+        </div>
+        {{!-- <div class="search-bar-container">
+            <input id="search-bar" class="search-bar" type="text" placeholder="Search">
+            <a id="btnSearch" class="btn-search" href="#search-query"><img id="search-btn-logo" src="icons/magnifying-glass.png" alt=""></a>
+        </div> --}}
+    </div>
+
+    <div class="genres">
+    {{#each genres}}
+        <a href="{{url}}">
+            <div class="genre">
+                <div class="genre-icon-container">
+                    <img class="genre-icon-img" src="{{iconPath}}" alt="Genre Icon">
+                </div>
+                <div class="genre-title">
+                    <span class="genre-name">{{name}}</span>
+                </div>
+                <div class="genre-tagline">
+                    {{genreTagline}}
+                </div>
+            </div>
+        </a>
+    {{/each}}
+    </div>
+    
+</body>
+
+
+

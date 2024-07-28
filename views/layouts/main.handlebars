@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Forum</title>
+</head>
+
+    <div id="header" class="centered-flex">
+        
+        <div class="left-side-header">
+            <img src="https://firebasestorage.googleapis.com/v0/b/bookreviewforum.appspot.com/o/static_image_files%2Fsite-logo.jpg?alt=media&token=d308ce93-69d2-46e1-a838-00518daab352" alt="Site Logo" id="site-logo">
+            <a href="/home/" class="shortcut-button-link"><div class="shortcut-button" id="home-btn">Home</div></a>
+{{!--             <a href="" class="shortcut-button-link"><div class="shortcut-button">About</div></a>
+ --}}            
+            {{#if @root.isAdmin}}
+            <a href="/add-book/" class="shortcut-button-link"><div class="shortcut-button" style="border: 1px solid blue;">Add Book</div></a>
+            {{else}}
+            
+            {{/if}}
+        </div>
+            
+        <a id="user-panel" href="/profile/{{email}}">
+        <div  id="user-profile-pic">
+            <img src="{{profilePicURL}}" alt="Profile Picture">
+        </div>
+            <span id="username">{{username}}</span>
+        </a>
+
+    </div>
+
+    {{{body}}}
+
+</html>

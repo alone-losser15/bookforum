@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="baseStyles.css">
+    <link rel="stylesheet" href="userProfileStyles.css">
+    <style>
+        /* Your existing CSS styles */
+        /* Ensure that the styles for tabs and tab contents are included here */
+    </style>
+</head>
+
+<body>
+    <div class="main centered-flex">
+
+        <div class="top-panel centered-flex">
+            <div class="profile-pic-container">
+                <img src="tesla.png" alt="profile pic" id="profile-pic">
+            </div>
+
+            <div class="name-and-status centered-flex">
+                <h2>Nikola Tesla</h2>
+                <span>New Member</span>
+            </div>
+
+            <div class="toolbar-panel centered-flex">
+                <button>Change Profile Picture</button>
+                <button>Change Username</button>
+            </div>
+
+        </div>
+
+
+        <div class="bottom-panel centered-flex">            
+            <div class="left-summary-panel centered-flex">
+                <span>Joined: </span>
+                <span>Reviews Published</span>
+                <span>Likes Received</span>
+            </div>
+
+            <div class="right-summary-panel centered-flex" >
+
+                <div id="tabs-list">
+
+                    <button data-tab-target="reviews-published" class="tab active">Reviews Published</button>
+                    <button data-tab-target="favourite-books" class="tab">Favourite Books</button>
+                
+                </div>
+
+                <div class="tab-content active" id="reviews-published">
+                    <!-- Reviews Published Content -->
+                    <div class="review-header">
+                        <div class="book-details">Book Title - Author</div>
+                        
+                            <button>Delete Review</button>
+                        
+                    </div>
+                    <div class="review-content-container">
+                        <div class="review-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium placeat aspernatur rerum eveniet tenetur facilis ipsum quod eos. Nisi, mollitia! Fugit, iure eveniet nam dolorem exercitationem eius ipsam odit officia culpa cum. Beatae ad error non consectetur assumenda, alias adipisci aut nam facilis natus ab dolorum deserunt obcaecati aspernatur hic.</div>
+                    </div>
+                   
+                </div>
+
+                <div class="tab-content" id="favourite-books">
+                    <!-- Favourite Books Content -->
+                    <div class="cards-container">
+                        <div class="book-container">
+                            <div class="book-cover-container">
+                                <img src="book-cover.jpg" alt="Book Cover" class="book-cover">
+                            </div>
+                            <div class="book-details">
+                                <div class="book-title">Book Title</div>
+                                <div class="book-author">Book Author</div>
+                                <button>Remove</button>
+                            </div>
+                            
+                        </div>
+
+                        <div class="book-container">
+                            <div class="book-cover-container">
+                                <img src="book-cover.jpg" alt="Book Cover" class="book-cover">
+                            </div>
+                            <div class="book-details">
+                                <span>Book Title</span>
+                                <span>Author</span>
+                            </div>
+                        </div>
+
+                        <div class="book-container">
+                            <div class="book-cover-container">
+                                <img src="book-cover.jpg" alt="Book Cover" class="book-cover">
+                            </div>
+                            <div class="book-details">
+                                <span>Book Title</span>
+                                <span>Author</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

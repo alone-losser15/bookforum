@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Book</title>
+    <link rel="stylesheet" href="baseStyles.css">
+    <link rel="stylesheet" href="editBook.css">
+</head>
+<body>
+    
+    <form id="addBookForm" enctype="multipart/form-data">
+        <h1>Edit Details</h1>
+        <div class="col-container centered-flex">
+            
+            <input type="text" id="bookName" name="bookName" required placeholder="Title">
+        </div>
+
+        <div class="col-container centered-flex">
+            <input type="text" id="authors" name="authors" required placeholder="Authors (Comma Separated)"><br><br>
+        </div>
+
+        <div class="col-container centered-flex">
+            <input type="text" id="publishedYear" name="publishedYear" required placeholder="Year">
+        </div>
+
+        <div class="col-container centered-flex">
+            <select id="genres" name="genres" multiple required>
+                {{#each genres}}
+                    <option value="{{this.name}}">{{this.name}}</option>
+                {{/each}}
+            </select><br><br>
+        </div>
+
+        <div class="col-container centered-flex">
+            <input type="text" id="bookTagline" name="bookTagline" placeholder="Tagline">
+        </div>
+
+        <div class="col-container centered-flex ">
+            <label for="bookCover">Book Cover</label>
+            <div class="cover-col">
+                <input type="file" id="bookCoverFile" name="bookCoverFile">
+                <input type="text" id="bookCoverURL" name="bookCoverURL" placeholder="Alternate Method: Enter Cover URL"><br><br>
+            </div>
+        </div>
+
+        <button type="submit">Save</button>
+    </form>
+ 
+</body>
+</html>

@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Book</title>
+    <link rel="stylesheet" href="/css/baseStyles.css">
+    <link rel="stylesheet" href="/css/addBook.css">
+</head>
+<body>
+    
+    <form id="addBookForm" enctype="multipart/form-data">
+        <h1>Add New Book</h1>
+        <div class="col-container centered-flex">
+            <label for="bookName">Book Name</label>
+            <input type="text" id="bookName" name="bookName" required ><br><br>
+        </div>
+
+        <div class="col-container centered-flex">
+            <label for="authors">Author(s)</label>
+            <input type="text" id="authors" name="authors" required placeholder="(Comma Separated)"><br><br>
+        </div>
+
+        <div class="col-container centered-flex">
+            <label for="publishedYear">Published Year</label>
+            <input type="text" id="publishedYear" name="publishedYear" required><br><br>
+        </div>
+
+        <div class="col-container centered-flex">
+            <label for="genres">Genres</label>
+            <select id="genres" name="genres" multiple required>
+                {{#each genres}}
+                    <option value="{{this.name}}">{{this.name}}</option>
+                {{/each}}
+            </select><br><br>
+        </div>
+
+
+        <div class="col-container centered-flex">
+            <label for="bookTagline">Tagline</label>
+            <input type="text" id="bookTagline" name="bookTagline"><br><br>
+        </div>
+
+        <div class="col-container centered-flex ">
+            <label for="bookCover">Book Cover</label>
+            <div class="cover-col">
+                <input type="file" id="bookCoverFile" name="bookCoverFile">
+                <input type="text" id="bookCoverURL" name="bookCoverURL" placeholder="Alternate Method: Enter Cover URL"><br><br>
+            </div>
+        </div>
+
+        <button type="submit">Add</button>
+    </form>
+
+</body>
+<script src="/scripts/addBookScript.js" type="text/javascript"></script>
+
+</html>

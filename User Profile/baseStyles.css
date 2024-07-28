@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;300;400;600;700;800&display=swap');
+
+
+:root {
+  --headerBG: #ffffff;
+  --bodyBG: #F6F6FE;
+  --reviewBoxBG: white;
+  --bookSummaryBG: white;
+  --MontserratFont: 'Montserrat';
+  --OpenSansFont : 'Open Sans';
+  --ArchivoFont : 'Archivo';
+  --RobotoFont : 'Roboto';
+  --floatingHeaderBG: black;
+
+  --mediumBorderRadius: 8px;
+  --smallBorderRadius: 4px;
+  --xSmallBorderRadius: 2px;
+
+  --summaryBoxShadow : rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  --reviewBoxShadow :  rgba(51, 211, 80, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  --reviewSummarizerBoxShadow : rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  --bodyboxShadow :  rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  --headerBoxShadow : rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 2.5vh 0;
+  margin: 2vh;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--bodyBG);
+  box-shadow: var(--bodyboxShadow);  border-radius: var(--mediumBorderRadius);
+  position: relative;
+  
+}
+
+#gpt-ai-title{
+  font-weight: 650;
+}
+
+.centered-flex{
+  display: flex;
+  align-items:center ;
+  justify-content: space-between;
+}
+
+#header{
+  flex-direction: row;
+  background-color: var(--headerBG);
+  width: calc(100% - 2vh );
+  min-height: 10vh;
+  padding: 1vh;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  box-shadow: var(--headerBoxShadow);
+  flex-wrap: wrap;
+}
+
+#user-panel{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  height: 100%;
+  border-radius: var(--smallBorderRadius);
+  justify-self: flex-end;
+  margin-right: 4vh;
+  padding: 0.5vh;
+}
+.shortcut-button-link{
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Sarabun:ital&display=swap");
+
+#username{
+  margin: 2vh;
+  font-weight: 500;
+}
+.left-side-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+.shortcut-button{
+  margin: 1.5vh;
+  border: 1px solid black;
+  padding: 1.5vh;
+  box-sizing: border-box;
+}
+
+#site-logo{
+  min-height: 2vh;
+  max-height: 8vh;
+  object-fit: cover; /* Keeps the aspect ratio of the image */
+  margin: 0 2vh 0 4vh;
+}
+#user-profile-pic{
+  min-width: 2vh;
+  max-width: 7vh;
+  
+  border-radius: 50%;
+
+}
+#shortcuts-panel{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+button{
+  padding: 6px 10px;
+  background-color: #eeecf1;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  outline: none;
+  border-radius: var(--smallBorderRadius);
+  font-family: var(--ArchivoFont);
+  font-size: 15px;
+}
+
+button:hover{
+  background-color: #ccc;
+}

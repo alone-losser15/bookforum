@@ -1,0 +1,59 @@
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 45vw;
+    font-family: var(--ArchivoFont);
+
+    padding: 3vh;
+    margin: 2vh;
+    background-color: white;
+    box-shadow: var(--summaryBoxShadow);
+    border-radius: var(--smallBorderRadius);
+}
+.col-container{
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 1vh;
+    padding: 0.5vh;
+   
+}
+
+label{
+    flex: 3;
+    width: 100%;
+    
+}
+
+input{
+    flex: 8;
+    width: 100%;
+    height: 3vh;
+    font-family: var(--ArchivoFont);
+}
+
+input[type="file"]::file-selector-button {
+    padding: 3px 6px;
+  
+    border: 1px solid #ccc;
+    cursor: pointer;
+    outline: none;
+    border-radius: var(--smallBorderRadius);
+    font-family: var(--ArchivoFont);
+    font-size: 15px;
+    background-color: var(--buttonBgColor);
+}
+  
+input[type="file"]::file-selector-button:hover{
+background-color: var(--buttonHoverColor);
+}
+
+.cover-col{
+    flex: 8;
+    display: flex;
+    justify-content: space-between;
+}

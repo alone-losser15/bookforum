@@ -1,0 +1,33 @@
+
+<link rel="stylesheet" href="/css/baseStyles.css">
+<link rel="stylesheet" href="/css/genreMenuStyles.css">
+
+<body>
+
+     <div class="page-title">
+    <h1>{{genreTitle}}</h1></div>
+    <div class="cards-container">
+        {{#each books}}
+        <a href="/reviews/{{_id}}" class="card-link">
+            <div class="card">
+                <img src="{{bookCoverPath}}" alt="" class="card-media" />
+                <div class="card-body">
+                    <h3 class="card-title">{{bookName}}</h3>
+                    
+                    <div class="card-author">{{#each authors}}
+                        {{this}}{{#unless @last}},&nbsp;{{/unless}}
+                    {{/each}}
+                    </div>
+
+{{!--                     <span class="published-year">{{publishedYear}}</span>
+ --}}                    <span class="card-description">{{bookTagline}}</span>
+                </div>
+            </div>
+        </a>
+        {{/each}}
+    </div>
+
+</body>
+
+
+</html>

@@ -1,0 +1,134 @@
+.main {
+    flex-direction: column;
+}
+
+.top-panel {
+    flex-direction: row;
+    width: 100%;
+    justify-content:space-around;
+    box-shadow: var(--headerBoxShadow);
+    border-radius: var(--smallBorderRadius);
+}
+
+#profile-pic {
+    max-width: 15vh;
+}
+
+.name-and-status {
+    flex-direction: column;
+}
+
+.toolbar-panel {
+    flex-direction: column;
+}
+
+.book-cover {
+    max-height: 10vh;
+}
+
+.bottom-panel, .left-summary-panel {
+    flex-direction: row;
+    align-content: space-between;
+    align-self: flex-start;
+}
+
+.left-summary-panel {
+    flex-direction: column;
+    border: 1px solid black;
+    flex: 2;
+    margin: 2vh;
+    width: 30vw;
+}
+
+.right-summary-panel {
+    flex-direction: column;
+    flex: 6;
+}
+
+#tabs-list {
+    display: flex;
+    width: 90%;
+    justify-content: flex-start;
+}
+
+.tab {
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    outline: none;
+}
+
+.tab.active {
+    background-color: #ccc;
+}
+
+.tab-content {
+    display: none;
+    flex-direction: column;
+    width: 60vw;
+    box-shadow: var(--reviewBoxShadow);
+    border-radius: var(--mediumBorderRadius);
+}
+
+.tab-content.active {
+    display: flex;
+    flex-direction: column;
+}
+
+#reviews-published{
+    flex-direction: column;
+    padding: 1.5vh;
+    margin: 1vh 0 1vh 0;
+
+}
+
+.review-header{
+    font-family: var(--MontserratFont);
+    font-weight: 550;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.review-text{
+    line-height: 1.5;
+    font-weight: 480;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#favourite-books{
+   
+
+    padding: 1.5vh;
+    margin: 1vh 0 1vh 0;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust the minmax value as needed */
+    gap: 2vh;
+    margin: 3vh 0 1.5vh 0;
+    box-sizing: border-box;
+    width: 95%;
+}
+
+.book-container {
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 4px;
+    padding: 2vh;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    min-height: 15vh; /* Ensure the card height adjusts based on content */
+    display: flex;
+    flex-direction: row;
+}
+
+.book-details{
+    align-content: space-evenly;
+    margin: 1vh 1vh 1vh 2vh;
+}

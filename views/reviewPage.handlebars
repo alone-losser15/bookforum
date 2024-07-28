@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Review Forum</title>
+    <link rel="stylesheet" href="/css/baseStyles.css">
+    <link rel="stylesheet" href="/css/reviewPageStyles.css">
+</head>
+
+<body>
+
+    <div class="floating-header">
+        <span id="floating-header-text"></span>
+    </div>
+
+    <div class="book-summary">
+
+        <img id="book-cover" src="{{book.bookCoverPath}}" alt="Book Cover">
+
+        <div class="book-info centered-flex">
+            <h1 id="book-title">{{book.bookName}}</h1>
+            <i> by
+                <span id="book-author">
+                    {{#each book.authors}}
+                        {{this}}{{#unless @last}},&nbsp;{{/unless}}
+                    {{/each}}
+                </span>
+            </i>
+            <h4 id="book-tagline">{{book.bookTagline}}</h4>
+            <h5 id="book-published-year">Published:  <span id="book-published-year-value">{{book.publishedYear}}</span></h5>
+            <h5 id="book-genres">Genres: 
+                <span id="book-genre-values">{{#each book.genres}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</span>
+            </h5>
+            <h5 id="reviews-count">Reviews Count: {{reviews.length}}</h5>
+            <div class="book-summary-toolbar">
+                <button id="writeReviewButton" class="book-summary-toolbar-item">Write Review</button>
+                <button id="summarizeButton" class="book-summary-toolbar-item">Summarize Reviews</button>
+                <button class="addToFavourites" data-book-id="{{book._id}}" class="book-summary-toolbar-item">Add to Favourites</button>
+                
+                {{#if isAdmin}}
+                    <button class="editBookButton book-summary-toolbar-item" style="border: 1px solid blue;" >Edit</button> 
+                {{/if}}
+            </div>
+        </div>
+
+        <form id="editBookForm" method="POST" action="/reviews/{{book._id}}/edit" enctype="multipart/form-data">
+
+            <h2 id="edit-form-title">Edit Book Details</h2>
+
+            <input type="hidden" value={{@root.book._id}} name="bookId" >
+            
+            <div class="edit-form-col">
+                <label for="newBookName">Title</label>
+                <input type="text" id="newBookName" name="newBookName" required>
+            </div>
+            
+            <div class="edit-form-col">
+                <label for="newBookAuthors">Authors</label>
+                <input type="text" id="newBookAuthors" name="newBookAuthors" required>
+            </div>
+
+            <div class="edit-form-col">
+                <label for="newPublishedYear">Published Year</label>
+                <input type="text" id="newPublishedYear" name="newPublishedYear"required>
+            </div>
+
+            <div class="edit-form-col">
+                <label for="newGenres">Genres</label>
+                <select id="newGenres" name="newGenres" multiple required>
+                    {{#each @root.genres}}
+                        <option value="{{this.name}}">{{this.name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+            <div class="edit-form-col">
+                <label for="newBookTagline">Tagline</label>
+                <input type="text" id="newBookTagline" name="newBookTagline" value="{{book.bookTagline}}"><br><br>
+            </div>
+
+            <div class="edit-form-col">
+                <label for="newBookCover">Book Cover</label>
+                <div class="cover-col">
+                    <input type="file" id="bookCoverFile" name="bookCoverFile">
+                    <input type="text" id="bookCoverURL" name="bookCoverURL" placeholder="Alternate Method: Enter Cover URL">
+                </div>
+            </div>
+
+            <div class="edit-form-col book-edit-toolbar">
+                <button type="submit">Save Changes</button>
+                <button type="button" id="cancelEdit">Cancel</button>
+            </div>
+        </form>
+
+       
+
+    </div>
+    
+    {{!-- <div class="div">"USERNAME: "{{email}}</div> --}}
+    <form class="review-publish-section" id="publishForm" action="/reviews/publish-review" method="POST">
+
+        <input type="hidden" name="bookName" value="{{book.bookName}}">
+        <input type="hidden" name="reviewerName" value="{{username}}">
+        <input type="hidden" name="bookId" value="{{book._id}}">
+   
+        <input type="hidden" name="reviewerEmail" value="{{email}}">
+        <div class="review-publish-box centered-flex">
+            <div class="publish-heading-container">
+                <img src="https://firebasestorage.googleapis.com/v0/b/bookreviewforum.appspot.com/o/static_image_files%2Ffeather.png?alt=media&token=5cef5951-fa98-471f-8abd-0bb291dbc36f" alt="publish icon" id="publish-icon">
+                <h3 id="publish-summary-heading">Publish Your Review</h3>
+            </div>
+            
+            <div class="publish-container centered-flex">
+                <div class="publisher-info centered-flex">
+                    <span class="username">{{username}}</span>
+                    <div id="publisher-profile-pic">
+                        <img src="{{profilePicURL}}" alt="Profile Picture" >
+                    </div> 
+                </div>
+
+                <div class="publish-content">
+                    <textarea name="review" id="publishingText" cols="30" rows="10" placeholder="Write your review here..."></textarea>
+                </div>
+            </div>
+
+            <div class="publish-toolbar-container centered-flex">
+                <button id="publishButton" class="publish-toolbar-buttons" type="submit">Publish</button>
+                <button id="cancelButton" class="publish-toolbar-buttons" type="reset">Cancel</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="review-summarizer-section">
+        <div class="review-summarizer-box centered-flex">
+            <div class="review-summary-container centered-flex">
+                <div class="reviewer-info centered-flex">
+                    <span id="gpt-ai-title">ChatGPT API</span>
+                    <img src="https://firebasestorage.googleapis.com/v0/b/bookreviewforum.appspot.com/o/static_image_files%2FChatGPT_logo.png?alt=media&token=3c922423-0f11-4643-8622-383a9246c8f4" alt="Reviewer Profile Pic" class="reviewer-profile-pic">
+                </div>
+
+                <div class="review-content">
+                    <h3 id="review-summary-heading">Summary of Reviews</h3>
+                    <p id="textContainer"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="reviews-section centered-flex">
+        {{#each reviews}}
+            <div class="review-box centered-flex" id="review{{@index}}">
+                <div class="review-container centered-flex">
+                    <div class="reviewer-info centered-flex">
+                        <span class="reviewer-name">{{this.reviewerId.username}}</span>
+                        <div class="reviewer-profile-pic">
+                            <img src="{{this.reviewerId.profilePicURL}}" alt="Reviewer Profile Pic" >
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <span class="review-publication-date">{{this.reviewDate}}</span>
+                        <p class="review-text">{{this.reviewText}}</p>
+                    </div>
+                </div>
+
+                <div class="likes-toolbar-container">
+                    {{#contains this.likedBy @root.email}} 
+                        <img src="/icons/heart_red.png" alt="Like" class="heart-icon liked" data-review-id="{{this._id}}">
+                    {{else}}
+                        <img src="/icons/heart_empty.png" alt="Like" class="heart-icon" data-review-id="{{this._id}}">
+                    {{/contains}}
+                    <span class="like-count-container">
+                        <span class="like-count" data-review-id="{{this._id}}">{{this.likedBy.length}}</span>
+                        Like
+                    </span>
+                        
+                </div>
+
+            </div>
+        {{/each}}
+    </div>
+
+</body>
+
+<script src="/scripts/reviewPage_Script.js" type="text/javascript"></script>
+
+</html>

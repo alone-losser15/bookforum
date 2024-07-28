@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="/login/logIn.css" type="text/css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="main border">
+
+        <form id="login-form" class="signup-details" action="/auth/login" method="POST">
+            <!-- <h2>Sign In</h2> -->
+            <img src="https://firebasestorage.googleapis.com/v0/b/bookreviewforum.appspot.com/o/static_image_files%2Fsite-logo-transparent.png?alt=media&token=9c1f27a1-7abb-4035-a45d-ac5b936fc767" alt="Site Logo" id="site-logo">
+            
+            <div class="col">
+                <input type="text" id="email" name="email" placeholder="Enter Email" required>
+            </div>
+
+            <div class="col">
+                <input type="password" id="password" name="password" placeholder="Enter Password" required>
+            </div>
+
+            <div class="col">
+                <button type="submit">SIGN IN</button>
+            </div>
+
+            <div class="col">
+                <p>Don't have an account? <a href="/signup/">Sign Up</a></p>
+            </div>
+
+        </form>
+
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+.main {
+    flex-direction: column;
+    width: 95%;
+    margin: 3vh 0 0 0;
+    padding: 0;
+}
+
+.top-panel {
+    flex-direction: row;
+    width: 100%;
+    justify-content:space-around;
+    box-shadow: var(--headerBoxShadow);
+    border-radius: var(--smallBorderRadius);
+    padding: 1vh;
+    background-color: #fff;
+}
+
+
+
+.profile-pic-container{
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 15vh;
+    height: 15vh;
+  }
+  .profile-pic-container img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+  }
+
+
+.name-and-status {
+    flex-direction: column;
+}
+
+.toolbar-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+   
+}
+.toobar-btn{
+    margin-top: 0.5vh;
+}
+#profilePicForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-cover {
+    max-height: 15vh;
+}
+
+.bottom-panel{
+    
+    flex-direction: row;
+    align-content: space-between;
+    align-self: flex-start;
+    width: 100%;
+    margin: 0;
+}
+
+
+
+.right-summary-panel {
+    flex-direction: column;
+    width: 100%;
+    margin: 2vh auto;
+}
+
+#tabs-list {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+.tab {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    outline: none;
+    margin: 0 1vh 0 0;
+}
+
+.tab.active {
+    background-color: #e5e6eb;
+}
+
+.tab-content {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: var(--reviewBoxShadow);
+    border-radius: var(--mediumBorderRadius);
+    background-color: white;
+}
+
+.tab-content.active {
+    display: flex;
+    flex-direction: column;
+}
+
+#reviews-published{
+    flex-direction: column;
+    padding: 1.5vh;
+    margin: 1vh 0 1vh 0;
+
+}
+
+.review-header{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 670;
+    font-family: var(--bookSummaryFont);
+    margin: 0.9vh;
+}
+
+
+.review-text{
+    line-height: 1.5;
+    font-weight: 480;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    padding: 1vh;
+}
+
+#favourite-books{
+
+    padding: 1.5vh;
+    margin: 1vh 0 1vh 0;
+}
+
+.review-container{
+    display: flex;
+    flex-direction: column;
+    padding: 2vh;
+    margin: 2vh;
+    box-shadow: var(--reviewBoxShadow);
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(45vw, 1fr)); /* Adjust the minmax value as needed */
+    gap: 1vh;
+    margin: 3vh 0 1.5vh 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.book-container {
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 4px;
+    padding: 2vh;
+    max-width: 100%;
+    margin: 1vh;
+    min-height: 15vh; /* Ensure the card height adjusts based on content */
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.book-details{
+    margin-left: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.book-title{
+    font-size: 20px;
+    font-weight: 640;
+    font-family: var(--bookSummaryFont);
+    margin: 0;
+}
+
+.book-author{
+    font-weight: 600;
+}
+
+.book-year{
+    font-weight: 500;
+}
+
+.removeFromFavourites{
+    width: 50%;
+}

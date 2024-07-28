@@ -1,0 +1,158 @@
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    margin: 0 0 20px 0;
+    background-color: #f7f8fc;
+    
+}
+
+.border{
+    
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 5px;
+}
+
+.flex-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex:1;
+}
+.profile-header{
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: 18fr 3fr;
+    padding: 20px;
+}
+
+#site-logo{
+    width: 100px;
+}
+
+.site-header{
+    background-color: #E6EEF8;
+}
+
+
+.left{
+    display: grid;
+    grid-template-columns: 150px 200px;
+}
+
+.left-panel-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#profile-pic{
+    width: 150px;
+    border-radius: 50%;
+}
+
+.right{
+    align-self: start;
+    flex-direction: row;
+}
+
+.right-btns{
+    margin: 3px;
+    padding: 3px;
+    width: 120px;
+}
+
+.profile-data-view {
+    box-sizing: border-box;
+   
+    display: grid;
+    grid-template-columns: 20% 80%; /* 80% for profile-data-view */
+    
+}
+
+.profile-data-view, .profile-header{
+    margin: auto; /* Center the grid */
+    width: 80%; /* Set width to 80% of the screen */
+    
+}
+
+
+.summary-panel{
+    height: 600px;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+#tabs-list{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin: 10px;
+}
+
+
+[data-tab-content] {
+  display: none;
+  padding: 10px;
+}
+
+.active[data-tab-content] {
+  display: block;
+  padding: 10px;
+  
+}
+
+
+
+button {
+    background-color: #FFFFFF;
+    border: 0;
+    border-radius: .5rem;
+    box-sizing: border-box;
+    color: #111827;
+    font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: .850rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    padding: .50rem 1rem;
+    text-align: center;
+    text-decoration: none #D1D5DB solid;
+    text-decoration-thickness: auto;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  button:hover {
+    background-color: rgb(249,250,251);
+  }
+  button:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+  button:focus-visible {
+    box-shadow: none;
+  }
+
+  button.active[data-tab-content="review"] {
+    background-color: #CCCCCC; /* Darken the background color */
+}
+
+button.active[data-tab-content="upvotes"] {
+    background-color: #CCCCCC; /* Darken the background color */
+}
+
+button[data-tab-target].active {
+    background-color: #CCCCCC; /* Darken the background color */
+}

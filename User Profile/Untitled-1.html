@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="main">
+
+        <div class="site-header">
+            <img id ="site-logo" src="site-logo.jpg" alt="">
+        </div>
+
+        <div class="profile-header border">
+            
+            <div class="left ">
+                <img id ="profile-pic" src="tesla.png" alt="Profile Picture">
+
+                <div class="left-panel-details">
+                    <h2 id="username">Nikola Tesla</h2>
+                    <span id="member-status">New Member</span>
+                </div>
+                
+
+            </div>
+            
+            <div class="right flex-box">
+
+                <button id="acc-settings" class="right-btns border">Account Settings</button>
+
+                <button id="edit-profile" class="right-btns border">Edit Profile</button>
+
+            </div>
+
+        </div>
+
+        <div class="profile-data-view">
+
+            <div class="summary-panel border">
+                <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam ipsum autem id ad modi debitis recusandae cupiditate quis sint porro, eveniet corrupti nobis, nulla libero delectus eligendi est corporis maiores.</span>
+            </div>
+
+            <div class="profile-data-panel border" >
+
+                <div id="tabs-list">
+
+                    <button data-tab-target="#reviews-published" class="tab active">Reviews Published </button>
+                    <button data-tab-target="#upvotes-received" class="tab">Upvotes Received</button>
+                
+                </div>
+
+                <div class="tab-content">
+                    <div id="reviews-published" data-tab-content class="active">
+                        <p>REVIEW DATA Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quibusdam nam officia laboriosam omnis? Nemo amet ipsam repudiandae aut magnam. Itaque laboriosam alias eveniet quisquam? Facere velit inventore modi veniam?</p>
+                    </div>
+
+                    <div id="upvotes-received" data-tab-content>
+                        <p> UPVOTE DATA Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quibusdam nam officia laboriosam omnis? Nemo amet ipsam repudiandae aut magnam. Itaque laboriosam alias eveniet quisquam? Facere velit inventore modi veniam?</p>
+                    </div>
+                </div>
+                    
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
